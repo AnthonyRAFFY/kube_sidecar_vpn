@@ -63,7 +63,6 @@ spec:
           value: "120"
         - 
         securityContext:
-          privileged: true
           capabilities:
             add:
               - NET_ADMIN
