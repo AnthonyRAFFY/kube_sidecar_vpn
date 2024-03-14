@@ -61,7 +61,6 @@ spec:
           value: "5"
         - name: KUBESCVPN_CHECK_INTERVAL
           value: "120"
-        - 
         securityContext:
           capabilities:
             add:
