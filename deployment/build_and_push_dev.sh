@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME="kube_wireguard_checker"
+NAME="kube_sidecar_vpn"
 REGISTRY_NAME=$1
 
 poetry export -f requirements.txt --output deployment/requirements.txt
