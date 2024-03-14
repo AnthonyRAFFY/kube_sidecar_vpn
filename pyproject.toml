@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "vpn_connection_checker"
+version = "0.1.0"
+description = "Monitor the link of a machine to a VPN machine used as a gateway (The traffic from the machine is redirect to the gateway)"
+authors = ["Anthony RAFFY <anthony.raffy38@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11.8"
+asyncio = "^3.4.3"
+aiohttp = "^3.9.3"
+requests = "^2.31.0"
+pytest = "^8.1.1"
+pytest-mock = "^3.12.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
