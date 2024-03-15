@@ -129,7 +129,7 @@ class IPNetWrapper:
 
         raise WrapperCommandError("Cannot find a default route")
 
-    def delete_default_route(self):
+    def delete_default_route(self) -> None:
         """Delete the default route
 
         Returns:
@@ -140,7 +140,7 @@ class IPNetWrapper:
 
         out, err = self.execute_command(["ip", "route", "del", "default"])
 
-    def add_default_route(self, ip: str):
+    def add_default_route(self, ip: str) -> None:
         """Add a default route
 
         Args:
@@ -152,3 +152,27 @@ class IPNetWrapper:
         """
 
         out, err = self.execute_command(["ip", "route", "add", "default", "via", ip])
+
+    def add_route(self, dest: str, src: str) -> None:
+        """Add a route
+
+        Returns:
+            Nothing. Successful if the method doesn't raise an exception.
+        Raises:
+            WrapperCommandError: An error occured while adding the route
+        """
+
+        out, err = self.execute_command(
+            ["ip", "route", "add", "10.43.0.0/16", "via", "10.42.0.1"]
+        )
+
+    def delete_route(self, dest: str) -> None:
+        """Delete a route
+
+        Returns:
+            Nothing. Successful if the method doesn't raise an exception.
+        Raises:
+            WrapperCommandError: An error occured while deleting the route
+        """
+
+        out, err = self.execute_command(["ip", "route", "del", dest])
